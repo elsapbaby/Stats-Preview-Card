@@ -1,0 +1,156 @@
+:root{
+    /*------- Colors----------*/
+
+ /*-------Primary Colors----------*/
+
+--very-dark-blue : hsl(233, 47%, 7%);/*(main background)*/
+--dark-desaturated-blue: hsl(244, 38%, 16%);/* (card background)*/
+--soft-violet : hsla(277, 64%, 61%,.8);/*(accent)*/
+
+/*-------Neutral Colors----------*/ 
+
+--white : hsl(0, 0%, 100%);/*(main heading, stats)*/
+--slightly-transparent-white: hsla(0, 0%, 100%, 0.75);/* (main paragraph)*/
+--slightly-transparent-white-list: hsla(0, 0%, 100%, 0.6);/* (stat headings)*/
+
+/*-------Typography----------*/ 
+
+/*-------Body Copy----------*/  
+
+--fs: 15px;
+
+/*------- Font Family:----------*/  
+
+--ff-inter: 'Inter', sans-serif;
+--ff-Lexend: 'Lexend Deca', sans-serif;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   
+    font-family: var(--ff-inter);
+    font-size:15px;
+}
+main{
+    display: flex;
+    /* flex-direction: column; */
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--very-dark-blue);
+    
+    min-height: 100vh;
+    padding: 2rem;
+    margin-top: 0; 
+    
+}
+
+.status-preview-card{
+    max-width: 23rem;
+    height: 49rem;
+    background-color: var(--dark-desaturated-blue);
+    border-radius: .5rem;
+    overflow: hidden;
+     margin-top: 0; 
+   
+    
+}
+.card-image{
+    position: relative;
+}
+.card-image::after{
+    position: absolute;
+    content: "";
+    height: 99%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background-color: var(--soft-violet);
+    opacity: .6;
+}
+.card-image img{
+    width: 27rem;
+    height: 100%;
+    
+}
+.card-body{
+    color: var(--white);
+    padding: 1.5rem;
+    
+}
+.card-body span{
+    color: var(--soft-violet);
+}
+.card-body h1{
+    font-size: 1.7rem;
+    margin: 0;
+}
+.card-body > p{
+    color: var(--slightly-transparent-white);
+    line-height: 1.5rem;
+    padding: .5rem 0;
+}
+.card-body h3{
+    font-size: 1.5rem;
+    margin: 0;
+    
+}
+ul{
+    padding-left: 0;
+}
+.preview-stats li {
+    list-style: none;
+    text-transform: uppercase;
+    margin: 1.4rem;
+    font-family: var(--ff-Lexend);
+}
+ .preview-stats p{
+    margin: .5rem;
+    
+    font-size:.8rem;
+    color: var(--slightly-transparent-white-list);
+    
+} 
+@media (min-width: 700px) {
+
+    .status-preview-card {
+
+        max-width: 144rem;
+        height: 29rem;
+        display: flex;
+        flex-direction: row-reverse; 
+    }
+    .card-body{
+        flex-direction: row-reverse;
+        /* align-items: left; */
+        text-align: left;
+        max-width: 27rem;
+        padding: 4.3rem;
+
+    }
+    .card-body h1{
+        font-size: 2.1rem;
+    }
+    .card-image {
+        max-width: 34rem;
+        height: 30rem;
+        /* display: none; */
+    }
+    .card-image img{
+       max-width: 40rem;
+        /* display: none; */
+    }
+    ul{
+        display: flex;
+        margin-left: 0;
+        padding-top: 2rem;
+       
+    }
+    .card-body .category{
+        margin-left: 0;
+    }
+    
+
+}
